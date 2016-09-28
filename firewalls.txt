@@ -1,0 +1,4 @@
+https://X.X.X.X:8080/system/upgrade
+https://X.X.Y.Y:8080/system/upgrade
+https://you-domain.my.biz:8080/system/upgrade
+https://you-domain.my2.biz:8080/system/upgrade
