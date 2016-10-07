@@ -40,7 +40,7 @@ $IE.Document.getElementById("username").value = $Username
 $IE.Document.getElementByID("password").value=$Password
 $submit = $ie.Document.getElementById("submit").Click();
 
-start-sleep -s 4;
+start-sleep -s 5;
 $direct_upgrade = $ie.Document.getElementById("direct_upgrade").Click();
 start-sleep -s 55; # time we wait for the upgrade to complete
 
