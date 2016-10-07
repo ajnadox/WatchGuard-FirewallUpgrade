@@ -9,7 +9,7 @@
 5) a success-update.log and/or failed-update.log will be written in the same
    folder so you know if everything have worked out fine.
 6) This script have just gotten a few improvments and more can for sure be made along the way ;)
-// Best RGDS André - Nadox AB - www.nadox.se
+// Best RGDS AndrÃ© - Nadox AB - www.nadox.se
  #>
  
  
@@ -40,9 +40,9 @@ $IE.Document.getElementById("username").value = $Username
 $IE.Document.getElementByID("password").value=$Password
 $submit = $ie.Document.getElementById("submit").Click();
 
-start-sleep -s 3;
+start-sleep -s 4;
 $direct_upgrade = $ie.Document.getElementById("direct_upgrade").Click();
-start-sleep -s 15; # time we wait for the upgrade to complete
+start-sleep -s 55; # time we wait for the upgrade to complete
 
 If (!$error)
 	{Write-Output $firewall | out-file -append -filepath ".\success-update.log"}
@@ -52,4 +52,4 @@ Else
 echo "$time - Finished upgrading firewalls"
 Write-Warning "If you are done - PUSH enter"
 pause
-Get-Process iexplore | Foreach-Object { $_.CloseMainWindow() | Out-Null } | stop-process –force
+Get-Process iexplore | Foreach-Object { $_.CloseMainWindow() | Out-Null } | stop-process â€“force
