@@ -1,3 +1,4 @@
+#Requires -Version 3.0
 <#Simple PowerShell script for autoupdating WatchGuard firewalls
         - Howto:
         1) Just change your credentials below
@@ -12,10 +13,7 @@
         // Best RGDS André - Nadox AB - www.nadox.se
  #>
  
-#--------CHANGE CREDENTIALS-------------------------------
-$Username='admin'
-$Password='YOURPASSWORD'
-#--------DONT CHANGE ANYTHING BELOW THIS LINE-------------
+$credential = Get-Credential -Message 'Write username and password for firewall' -UserName 'admin'
 
 $time = (Get-Date).ToString('yyyy-MM-dd HH:mm:ss')
 Write-Output -InputObject "$time - Starting upgrading firewalls"
@@ -34,8 +32,8 @@ foreach($firewall in $firewalls)
 
     start-sleep -Seconds 3
 
-    $IE.Document.getElementById('username').value=$Username 
-    $IE.Document.getElementByID('password').value=$Password
+    $IE.Document.getElementById('username').value=$credential.UserName 
+    $IE.Document.getElementByID('password').value=$credential.Password
     $submit = $ie.Document.getElementById('submit').Click()
 
     start-sleep -Seconds 5
